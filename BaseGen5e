@@ -1,0 +1,32 @@
+import random
+
+#Lists for .choice
+RaceList = ['Human','Elf','Dwarf','Half-Elf','Half-Ork','Ork','Tifiling','DragonBorn','Gnome','Halfling']
+BackgroundList = ['Acolyte','Charlatan','City Watch / Investigator','Criminal / Spy','Entertainer','Folk Hero','Gladiator','Haunted One','Hermit','Knight','Noble','Outlander','Pirate','Urchin']
+ClassList = ['Barb','Bard','Cleric','Druid','Fighter','Monk','Paladin','Ranger','Rouge','Sorcerer','Warlock','Wizard']
+
+#generating the random parts
+def GenCHar():
+    CON = random.randint(1,20)
+    STR = random.randint(1,20)
+    DEX = random.randint(1,20)
+    WIS = random.randint(1,20)
+    INT = random.randint(1,20)
+    CHA = random.randint(1,20)
+    Race = random.choice(RaceList)
+    BackGround = random.choice(BackgroundList)
+    Class = random.choice(ClassList)
+    print('Con:',CON,'STR:',STR,'DEX:',DEX,'WIS:',WIS,'INT:',INT,'CHA:',CHA,'Race:',Race,'BackGround:',BackGround,'Class:',Class)
+
+#Actually ask how many you want 'yes'= 1 'multi'= x 'other' = goodbye
+Var = input("Do you want a character?")
+if Var == 'yes':
+    print(type(Var))
+    GenCHar()
+elif Var == 'multi':
+    print(type(Var))
+    Chargenx =int(input("How many?")) 
+    for i in range(Chargenx):
+        GenCHar()
+else: 
+    print("goodbye")    
